@@ -5,16 +5,14 @@ networks:
 services:
   frontend-service:
     build:
-      context: AngularService
+      context: my-app
       dockerfile: Dockerfile
       args:
-        - API_URL=http://localhost:5124
         - API_DOMAIN=localhost:5124
     networks:
       - main-network
     ports:
-      - 80:4200
-      - 443:443
+      - 81:3000
 volumes:
   proxy:
   node_modules:
